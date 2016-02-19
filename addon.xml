@@ -1,5 +1,5 @@
 <?xml version = "1.0" encoding = "UTF-8" standalone = "yes"?>
-<addon id = "script.module.awshandler" name = "Addon watchstate handler" version = "0.1.0 alpha" provider-name = "kit500">
+<addon id = "script.module.awshandler" name = "Addon watchstates handler" version = "0.1.0 alpha" provider-name = "kit500">
 	<requires>
 		<import addon = "xbmc.python" version = "2.1.0"/>
 	</requires>
@@ -10,8 +10,8 @@
 		<description>Module add-on for Kodi enables storing watchstates for video addons separately from Kodi DB.
 See the readme for usage.</description>
 		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE Version 3</license>
+		<license>GPLv3</license>
 		<source></source>
-		<website></website>
+		<website>https://github.com/kit500/Addon-watchstates-handler</website>
 	</extension>
 </addon>
