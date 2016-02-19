@@ -16,15 +16,17 @@ At this moment, there is a necessary condition for the use of the module: the im
 Usage:
 ------
 The following instruction explains how to embed and use the module in an addons.  
-At first import and initialize the module:
+First import and initialize the module:
 
     import AWSHandler
     AWSHandler.InitDB()
 
 To get information about the status of a ListItem, create a dictionary with one of the three combinations:
+
  - a title,
  - a combination of a title / season number / series number,
- - a combination of a title / season number / series title or date,  
+ - a combination of a title / season number / series title or date,
+
 and request for watchstate information:
 
     info = {'title': title, 'season': season, 'episode': episode, 'episode_info': episode_info}
@@ -34,7 +36,7 @@ here, title - is unicode-string with the movie or TV show title,
 episode_info - unicode-string with the title of a series or a series release date,  
 season and episode - integer or string with the season number and the series number. Season number can be not specified (i.e, if the season is not known, it is better not to specify it, because season 1 will have a different identifier).
 
-Set the watchstate mark (I plan to move it inside the module in future):
+Set the watchstate mark (in the next releases I plan to move it inside the module):
 
     if res:
         if res ['wflag']: listitem.setInfo(type = 'video', infoLabels = {'playcount': 1, 'overlay': 5})
@@ -52,7 +54,7 @@ When playback is started, add the above-described combination 'info' for ListIte
 - Add an interface for importing another DB.
 - Add an interface to manage watchstates, including the ability to specify alternative names (aliases) of movies / TV series.
 - Add the possibility to process ListItem in CheckWS(), setting the mark automatically.
-- Add CheckWSMany() function to process array of ListItems.
+- Add CheckWSMany() function for processing of ListItems array.
 - Move the excessive log messages into the debug mode.
 
 The module was tested by me, but it is on alpha-stage because not all functions from the development plans are implemented yet.
