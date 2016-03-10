@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+# Addon Watchstates Handler
 # Copyright (C) 2016 kit500
 
 

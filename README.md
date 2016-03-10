@@ -1,17 +1,17 @@
 Addon watchstates handler
 =========================
 Module addon for Kodi enables storing watchstates (watched/partially watched) for video addons separately from Kodi DB.
-Generally, Kodi stores above watchstates, identifing it by paths (links) or virtual paths. Links, in reality, may be changed over time on sites that may also change the virtual paths in addons. This module maintains the above watchstates, identifying them by one of the three combinations:
+The reason for the creation of this module is the following. Generally, Kodi stores above watchstates, identifing them by paths (links) or virtual paths. Links, in reality, may be changed over time on sites that may also change the virtual paths in addons. This module maintains the above watchstates, identifying them by one of the following combinations:
 
  - a title,
  - a combination of title / season number / series number,
- - a combination of title / season number / series title or date.
+ - a combination of title / season number / series title or release date.
 
 The first option is suitable for movies or any video clips. Second - for the TV series. The third - for the TV series, when the series number is not specified, but we know only the title or release date of the series.
 
-This module can be used by installing it in parallel with the addon, or by including it as an internal library. (Note: The second option I have not tested yet). Other advantages, in addition to the immutability of the watchstates marks with the time, is the sharing of watchstates DB between addons using the module, and saving those marks when cleaning the Kodi library.
+This module can be used by installing it in parallel with the addon, or by including it as an internal library. (Note: The second option I have not tested yet). Other advantages, in addition to the immutability of the watchstates marks with the time, is the sharing of watchstates DB among addons using the module, and saving those marks when cleaning the Kodi library.
 
-At this moment, there is a necessary condition for the use of the module: the importing addons must use setResolvedUrl function for video playback. This is due to only this function correctly maintains the watchstates marks of viewing videos using the virtual paths in Kodi DB. Since the module is not the service-addon, it must use this information to then associate it with the above-described combinations. Also, I must to add that the module only tested when using virtual paths kind of plugin://... For real paths, most likely it will not work, however this option I have not tested yet.
+At this time, there is a necessary condition for the use of the module: the importing addons must use setResolvedUrl function for video playback. This is due to this function correctly maintains the watchstates marks of viewing videos using the virtual paths in Kodi DB. Since the module is not the service-addon, it must use this information to then associate it with the above-described combinations.
 
 Usage:
 ------
@@ -39,7 +39,7 @@ season and episode - integer or string with the season number and the series num
 Set the watchstate mark (in the next releases I plan to move it inside the module):
 
     if res:
-        if res ['wflag']: listitem.setInfo(type = 'video', infoLabels = {'playcount': 1, 'overlay': 5})
+        if res['wflag']: listitem.setInfo(type = 'video', infoLabels = {'playcount': 1, 'overlay': 5})
         else:
             listitem.setProperty('ResumeTime', res['resumetime'])
             listitem.setProperty('TotalTime', res['totaltime'])

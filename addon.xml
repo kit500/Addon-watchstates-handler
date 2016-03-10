@@ -11,7 +11,7 @@
 See the readme for usage.</description>
 		<platform>all</platform>
 		<license>GPLv3</license>
-		<source></source>
+		<source>https://github.com/kit500/Addon-watchstates-handler</source>
 		<website>https://github.com/kit500/Addon-watchstates-handler</website>
 	</extension>
 </addon>
