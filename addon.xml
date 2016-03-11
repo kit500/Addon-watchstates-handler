@@ -4,6 +4,8 @@
 		<import addon = "xbmc.python" version = "2.1.0"/>
 	</requires>
 	<extension point = "xbmc.python.module" library = "lib"/>
+	<extension point = "xbmc.python.pluginsource" library = "app.py">
+		<provides>executable</provides>
 	</extension>
 	<extension point = "xbmc.addon.metadata">
 		<summary>Module add-on for Kodi enables storing watchstates for video addons separately from Kodi DB.</summary>
@@ -13,5 +15,6 @@ See the readme for usage.</description>
 		<license>GPLv3</license>
 		<source>https://github.com/kit500/Addon-watchstates-handler</source>
 		<website>https://github.com/kit500/Addon-watchstates-handler</website>
+		<forum>http://forum.kodi.tv/showthread.php?tid=260428</forum>
 	</extension>
 </addon>
